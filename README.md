@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features an interactive project showcase, skills visualization, CLI-style resume, and smooth animations.
 
-🔗 **Live Demo**: [https://marzuq-portfolio.vercel.app](https://marzuq-portfolio.vercel.app)
+🔗 **Live Demo**: https://md-marzuq.github.io/portfolio/
 
 > IoT Engineer & Robotics specialist portfolio featuring:
 >
