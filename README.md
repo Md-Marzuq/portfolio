@@ -11,12 +11,6 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 > - Dark/light theme
 > - IoT & Robotics project showcase
 
-## 📸 Preview
-
-![Home Preview](public/preview-home.gif)
-
-![CLI Resume Preview](public/preview-cli.png)
-
 ## ✨ Features
 
 - **Interactive Portfolio**: Showcase IoT and Robotics projects with modal views and detailed descriptions
@@ -43,7 +37,7 @@ This repository contains Mohammed Marzuq's personal portfolio website, showcasin
 ### Option B — Clone directly
 
 ```bash
-git clone https://github.com/marzuq/portfolio.git
+git clone (https://md-marzuq.github.io/portfolio/)
 cd portfolio
 npm install
 npm run dev
