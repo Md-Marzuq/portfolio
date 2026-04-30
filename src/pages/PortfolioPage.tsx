@@ -53,8 +53,7 @@ const PortfolioPage: React.FC = () => {
 
       <motion.section
         id="about"
-        className="relative w-full flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-0"
-        style={{ height: "100vh" }}
+        className="relative w-full flex items-center justify-center px-4 sm:px-6 lg:px-8 pb-0 pt-32 sm:pt-36 min-h-screen scroll-mt-32 sm:scroll-mt-36"
         initial={{ opacity: 0, y: 8 }}
         animate={showHello ? { opacity: 0, y: 8 } : { opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -79,7 +78,7 @@ const PortfolioPage: React.FC = () => {
         />
       </div>
 
-      <main className="max-w-6xl 2xl:max-w-9xl mx-auto px-6 py-15 sm:py-20 lg:py-32 relative z-20">
+      <main className="max-w-6xl 2xl:max-w-9xl mx-auto px-4 sm:px-6 py-15 sm:py-20 lg:py-32 relative z-20">
         <section id="projects" className="py-8">
           <h2 className="text-2xl font-semibold text-[var(--brand)]">Projects</h2>
           <p className="mb-6 text-sm text-gray-500 dark:text-gray-400 mt-1">

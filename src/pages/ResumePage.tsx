@@ -10,7 +10,7 @@ const ResumePage: React.FC = () => {
     <ThemeProvider>
       <ScrollProgressBar />
       <Header links={[]} />
-      <main className="max-w-4xl mx-auto px-6 py-10 pt-25">
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-10 pt-25">
         <Resume />
       </main>
       <Footer />

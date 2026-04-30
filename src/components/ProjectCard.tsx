@@ -63,7 +63,7 @@ export const ProjectCard: React.FC<{
                 <img
                   src={coverImage}
                   alt={project.title}
-                  className="w-full object-cover h-56 sm:h-64"
+                  className="w-full object-cover h-40 sm:h-48 md:h-56 lg:h-64"
                 />
               </div>
             )}

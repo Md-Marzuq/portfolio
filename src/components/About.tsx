@@ -177,20 +177,32 @@ export const About: React.FC = () => {
   };
 
   return (
-    <section className="md:col-span-2">
-      <div className="max-w-7xl mx-auto px-6 py-20">
+    <section className="w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20">
+        <div className="sm:hidden mb-6">
+          <div className="relative z-30 rounded-3xl bg-[var(--surface)]/95 dark:bg-slate-950/95 border border-[var(--border)] p-4 shadow-sm">
+            <h1 className="text-3xl font-extrabold tracking-tight text-[var(--text)] dark:text-white">
+              {name}
+            </h1>
+            {personal.title && (
+              <p className="mt-1 text-sm text-black dark:text-gray-300">
+                {personal.title}
+              </p>
+            )}
+          </div>
+        </div>
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
+          className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start"
         >
           {/* Left: Headline + features + CTAs */}
           <motion.div variants={item} className="md:col-span-7">
-            <div className="panel-translucent relative overflow-hidden p-6 md:p-8 rounded-2xl">
+            <div className="relative z-20 bg-white/95 dark:bg-slate-950/95 overflow-visible p-4 sm:p-6 md:p-8 rounded-2xl min-h-[320px] sm:min-h-[380px] border border-white/10 dark:border-white/10 shadow-sm">
               {/* Animated border beam (multiple motion.paths following the rounded rect) */}
               <motion.svg
-                className="absolute inset-0 w-full h-full pointer-events-none z-0"
+                className="hidden sm:block absolute inset-0 w-full h-full pointer-events-none z-0"
                 viewBox="0 0 100 100"
                 preserveAspectRatio="none"
                 aria-hidden
@@ -257,19 +269,19 @@ export const About: React.FC = () => {
               </motion.svg>
 
               <div className="relative z-10">
-                <h1 className="text-4xl md:text-6xl font-extrabold leading-tight flex items-center gap-3">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold leading-tight flex items-center gap-3 text-[var(--text)] dark:text-white">
                   {name}
                 </h1>
 
                 {personal.title && (
-                  <div className="mt-2 text-sm text-muted-foreground">
+                  <div className="mt-2 text-sm text-black dark:text-gray-300">
                     {personal.title}
                   </div>
                 )}
 
                 <motion.p
                   variants={item}
-                  className="mt-6 text-lg text-muted-foreground max-w-2xl"
+                  className="mt-6 text-lg text-black dark:text-gray-300 max-w-full md:max-w-2xl"
                 >
                   {heroSummary}
                 </motion.p>
@@ -301,11 +313,11 @@ export const About: React.FC = () => {
 
                 <motion.div
                   variants={item}
-                  className="mt-8 flex flex-wrap gap-3"
+                  className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3"
                 >
                   <a
                     href="#projects"
-                    className="inline-flex items-center gap-2 rounded-md bg-foreground text-background px-5 py-3 text-sm font-semibold shadow-lg hover:opacity-95"
+                    className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-md bg-foreground text-background px-5 py-3 text-sm font-semibold shadow-lg hover:opacity-95"
                     onClick={(e) => onNavClick(e, "#projects")}
                     onKeyDown={(e) => handleKeyActivation(e, "#projects")}
                   >
@@ -314,7 +326,7 @@ export const About: React.FC = () => {
 
                   <a
                     href="/resume.pdf"
-                    className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-semibold text-foreground hover:bg-muted"
+                    className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-semibold text-foreground hover:bg-muted"
                     onKeyDown={(e) => handleKeyActivation(e, "/resume.pdf")}
                   >
                     Download resume
@@ -330,7 +342,7 @@ export const About: React.FC = () => {
             className="md:col-span-5 flex items-center justify-center overflow-visible"
           >
             <div
-              className="relative w-full h-100 flex items-center justify-center"
+              className="relative w-full max-w-lg mx-auto min-h-[22rem] sm:min-h-[26rem] flex items-center justify-center px-2"
               style={{ perspective: "1000px" }}
             >
               <div
@@ -363,7 +375,7 @@ export const About: React.FC = () => {
                       }}
                       onClick={() => setActiveIndex(index)}
                     >
-                      <div className="w-72 h-96 rounded-xl overflow-hidden shadow-2xl bg-muted ring-2 ring-border/20">
+                      <div className="w-48 h-64 sm:w-56 sm:h-72 md:w-72 md:h-96 rounded-xl overflow-hidden shadow-2xl bg-muted ring-2 ring-border/20">
                         {item.image && !item.image.includes("/placeholder") ? (
                           <img
                             src={item.image}

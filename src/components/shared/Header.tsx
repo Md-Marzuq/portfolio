@@ -8,7 +8,7 @@ import {
   animate,
   useMotionTemplate,
 } from "framer-motion";
-import { PiSunDuotone, PiMoonDuotone } from "react-icons/pi";
+import { PiSunDuotone, PiMoonDuotone, PiX, PiList } from "react-icons/pi";
 import { useTheme } from "../../context/ThemeContext";
 
 type NavLink = { href: string; label: string };
@@ -18,6 +18,7 @@ export const Header: React.FC<{ links?: NavLink[] }> = ({
 }) => {
   const { dark, toggle } = useTheme();
   const headerRef = useRef<HTMLElement | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [active, setActive] = useState<string>(links[0]?.href ?? "#about");
   useEffect(() => {
@@ -63,6 +64,7 @@ export const Header: React.FC<{ links?: NavLink[] }> = ({
     const headerH = headerEl?.offsetHeight ?? 0;
     const y = target.getBoundingClientRect().top + window.scrollY - headerH;
     springScrollTo(y);
+    setIsMobileMenuOpen(false); // Close mobile menu after navigation
   };
 
   const { scrollY } = useScroll();
@@ -77,7 +79,7 @@ export const Header: React.FC<{ links?: NavLink[] }> = ({
   return (
     <motion.header
       ref={headerRef}
-      className="fixed top-0 left-0 z-50 w-full"
+      className="fixed top-0 left-0 z-50 w-full overflow-visible"
       style={{
         backdropFilter: backdrop,
         WebkitBackdropFilter: backdrop,
@@ -108,10 +110,25 @@ export const Header: React.FC<{ links?: NavLink[] }> = ({
           opacity: overlayOpacity,
         }}
       />
-      <div className="relative max-w-6xl mx-auto px-6 py-4 flex items-center justify-end">
-        {/* Right: nav + theme + Try CLI */}
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
+            className="sm:hidden p-2 rounded-full border border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--border)]/30 transition cursor-pointer"
+          >
+            {isMobileMenuOpen ? <PiX size={22} /> : <PiList size={22} />}
+          </button>
+          <span className="text-sm font-semibold tracking-wide text-[var(--text)]">
+            Portfolio
+          </span>
+        </div>
+
         <nav aria-label="Primary" className="relative flex items-center gap-3">
-          <div className="relative hidden sm:flex gap-4">
+          <div className="hidden sm:flex gap-4">
             {links.map((l) => {
               const isActive = active === l.href;
               return (
@@ -149,6 +166,38 @@ export const Header: React.FC<{ links?: NavLink[] }> = ({
           </button>
         </nav>
       </div>
+
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            id="mobile-navigation"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="sm:hidden absolute inset-x-0 top-full bg-[var(--surface)] border-t border-[var(--border)] shadow-xl"
+          >
+            <div className="max-w-6xl mx-auto px-4 py-4 space-y-2">
+              {links.map((l) => {
+                const isActive = active === l.href;
+                return (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={(e) => onNavClick(e, l.href)}
+                    className={`block rounded-xl px-3 py-3 text-sm transition-colors ${
+                      isActive
+                        ? "text-[var(--brand)] bg-[var(--brand)]/10"
+                        : "text-[var(--text)] hover:bg-[var(--border)]/30"
+                    }`}
+                  >
+                    {l.label}
+                  </a>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };

@@ -122,7 +122,7 @@ export const ProjectModal: React.FC<{
             <motion.dialog
               open={open}
               aria-modal="true"
-              className="relative z-10 w-full max-w-4xl max-h-[90vh] p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)] shadow-lg flex flex-col"
+              className="relative z-10 w-full max-w-4xl max-h-[90vh] p-4 sm:p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)] shadow-lg flex flex-col"
               initial={{ y: 50, opacity: 0, scale: 0.95 }}
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: 40, opacity: 0, scale: 0.95 }}
@@ -338,7 +338,7 @@ export const ProjectModal: React.FC<{
                         <iframe
                           src={project.href}
                           title={project.title}
-                          className="w-full h-100 rounded-lg border border-[var(--border)]"
+                          className="w-full h-[28rem] sm:h-[34rem] rounded-lg border border-[var(--border)]"
                           loading="lazy"
                           onLoad={() => setIframeReady(true)}
                         />
