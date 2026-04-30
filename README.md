@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features an interactive project showcase, skills visualization, CLI-style resume, and smooth animations.
 
-🔗 **Live Demo**: [https://marzuq-portfolio.vercel.app](https://marzuq-portfolio.vercel.app)
+🔗 **Live Demo**: https://md-marzuq.github.io/portfolio/
 
 > IoT Engineer & Robotics specialist portfolio featuring:
 >
@@ -10,12 +10,6 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 > - Animated skill visualizations
 > - Dark/light theme
 > - IoT & Robotics project showcase
-
-## 📸 Preview
-
-![Home Preview](public/preview-home.gif)
-
-![CLI Resume Preview](public/preview-cli.png)
 
 ## ✨ Features
 
@@ -43,7 +37,7 @@ This repository contains Mohammed Marzuq's personal portfolio website, showcasin
 ### Option B — Clone directly
 
 ```bash
-git clone https://github.com/marzuq/portfolio.git
+git clone (https://md-marzuq.github.io/portfolio/)
 cd portfolio
 npm install
 npm run dev
