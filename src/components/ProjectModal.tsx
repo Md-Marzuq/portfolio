@@ -30,8 +30,6 @@ export const ProjectModal: React.FC<{
   const bodyRef = React.useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({ container: bodyRef });
 
-  const FaLink = FaIcons["FaLink" as keyof typeof FaIcons];
-
   // Reset state when modal opens
   useEffect(() => {
     if (open) {
