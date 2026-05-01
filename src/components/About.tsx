@@ -185,7 +185,7 @@ export const About: React.FC = () => {
               {name}
             </h1>
             {personal.title && (
-              <p className="mt-1 text-sm text-black dark:text-gray-300">
+              <p className="mt-1 text-sm text-[var(--muted)] dark:text-gray-300">
                 {personal.title}
               </p>
             )}
@@ -199,7 +199,7 @@ export const About: React.FC = () => {
         >
           {/* Left: Headline + features + CTAs */}
           <motion.div variants={item} className="md:col-span-7">
-            <div className="relative z-20 bg-white/95 dark:bg-slate-950/95 overflow-visible p-4 sm:p-6 md:p-8 rounded-2xl min-h-[320px] sm:min-h-[380px] border border-white/10 dark:border-white/10 shadow-sm">
+            <div className="relative z-20 bg-[var(--surface)]/95 overflow-visible p-4 sm:p-6 md:p-8 rounded-2xl min-h-[320px] sm:min-h-[380px] border border-[var(--border)] shadow-sm">
               {/* Animated border beam (multiple motion.paths following the rounded rect) */}
               <motion.svg
                 className="hidden sm:block absolute inset-0 w-full h-full pointer-events-none z-0"
@@ -274,14 +274,14 @@ export const About: React.FC = () => {
                 </h1>
 
                 {personal.title && (
-                  <div className="mt-2 text-sm text-black dark:text-gray-300">
+                  <div className="mt-2 text-sm text-[var(--muted)] dark:text-gray-300">
                     {personal.title}
                   </div>
                 )}
 
                 <motion.p
                   variants={item}
-                  className="mt-6 text-lg text-black dark:text-gray-300 max-w-full md:max-w-2xl"
+                  className="mt-6 text-lg text-[var(--text)] dark:text-gray-300 max-w-full md:max-w-2xl"
                 >
                   {heroSummary}
                 </motion.p>
@@ -317,7 +317,7 @@ export const About: React.FC = () => {
                 >
                   <a
                     href="#projects"
-                    className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-md bg-foreground text-background px-5 py-3 text-sm font-semibold shadow-lg hover:opacity-95"
+                    className="inline-flex w-full sm:w-auto justify-center items-center gap-2 rounded-md bg-[var(--brand)] text-white px-5 py-3 text-sm font-semibold shadow-lg hover:opacity-95"
                     onClick={(e) => onNavClick(e, "#projects")}
                     onKeyDown={(e) => handleKeyActivation(e, "#projects")}
                   >

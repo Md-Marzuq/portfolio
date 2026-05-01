@@ -81,7 +81,7 @@ const PortfolioPage: React.FC = () => {
       <main className="max-w-6xl 2xl:max-w-9xl mx-auto px-4 sm:px-6 py-15 sm:py-20 lg:py-32 relative z-20">
         <section id="projects" className="py-8">
           <h2 className="text-2xl font-semibold text-[var(--brand)]">Projects</h2>
-          <p className="mb-6 text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="mb-6 text-sm text-[var(--muted)] dark:text-gray-400 mt-1">
           </p>
           <ProjectsGrid
             projects={PORTFOLIO_INFO.projects}
@@ -91,14 +91,14 @@ const PortfolioPage: React.FC = () => {
 
         <section id="skills" className="py-8">
           <h2 className="text-2xl font-semibold text-[var(--brand)]">Skills</h2>
-          <p className="mb-6 text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="mb-6 text-sm text-[var(--muted)] dark:text-gray-400 mt-1">
           </p>
           <SkillsList skills={PORTFOLIO_INFO.skills} isBar={true} />
         </section>
 
         <section id="contact" className="py-8">
           <h2 className="text-2xl font-semibold text-[var(--brand)]">Contact</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-sm text-[var(--muted)] dark:text-gray-400 mt-1">
           </p>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)]">

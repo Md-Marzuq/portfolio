@@ -11,6 +11,8 @@
   --border: #e6e9ee; /* subtle borders */
   --brand: #6366f1; /* primary accent (indigo-500) */
   --accent: #ec4899; /* secondary accent */
+  --foreground: #6366f1; /* accent foreground color */
+  --background: #f8fafc; /* alternate background token */
 
   /* translucent background tokens (used for panels with blur) */
   --translucent-surface: rgba(255, 255, 255, 0.06);
@@ -27,6 +29,8 @@
   --border: #19232e;
   --brand: #7c3aed;
   --accent: #f472b6;
+  --foreground: #7c3aed;
+  --background: #0b1220;
 
   /* dark-mode translucent tokens */
   --translucent-surface: rgba(15, 23, 36, 0.14);

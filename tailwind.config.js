@@ -14,6 +14,7 @@ module.exports = {
         primary: "#A695E7",
         secondary: "var(--secondary)",
         accent: "var(--accent)",
+        foreground: "var(--foreground)",
         background: "var(--background)",
         surface: "var(--surface)",
         border: "var(--border)",
